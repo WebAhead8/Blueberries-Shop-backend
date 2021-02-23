@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, products bucket , productbucket;
+DROP TABLE IF EXISTS users, products, bucket , productbucket;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -19,8 +19,8 @@ CREATE TABLE products (
   name VARCHAR(255),
   description TEXT,
   image VARCHAR(255),
-  price NUMBER,
-  quantity NUMBER
+  price INTEGER,
+  quantity INTEGER
 );
 
 CREATE TABLE bucket (
@@ -28,7 +28,7 @@ CREATE TABLE bucket (
   user_id INTEGER REFERENCES users(id)
 );
 
-CREATE TABLE bucket (
+CREATE TABLE productBucket (
   id SERIAL PRIMARY KEY,
   bucket_id INTEGER REFERENCES bucket(id),
   product_id INTEGER REFERENCES products(id)
