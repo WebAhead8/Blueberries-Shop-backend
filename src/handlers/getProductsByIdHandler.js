@@ -1,4 +1,4 @@
-const model = require("../model/getProductsById");
+const model = require("../model/products");
 
 function getById(req , res , next)
 {
