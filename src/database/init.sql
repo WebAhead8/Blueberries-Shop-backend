@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS users, products, bucket , productbucket;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  email VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
   firstName VARCHAR(255),
   lastName VARCHAR(255),
   phoneNumber VARCHAR(255),
