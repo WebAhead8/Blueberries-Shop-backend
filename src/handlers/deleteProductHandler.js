@@ -1,5 +1,6 @@
-const model = require("../model/products");
+const path = require('path')
 
+const model = require(path.join(__dirname,'..','model','products')
 
 function deleteProductHandler(req,res,next){
     const productID = req.params.id;
