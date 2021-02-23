@@ -1,4 +1,7 @@
-const model = require("../model/products");
+const path = require('path')
+
+const model = require(path.join(__dirname,'..','model','products')
+
 
 function updateQuantity(req , res , next)
 {

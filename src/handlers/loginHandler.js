@@ -1,3 +1,8 @@
+const path = require('path')
+
+const model = require(path.join(__dirname,'..','model','products')
+
+
 function login(req,res,next){
     const user=req.body;
     users.getUser(user.email,user.password).then(userdetails=>{
