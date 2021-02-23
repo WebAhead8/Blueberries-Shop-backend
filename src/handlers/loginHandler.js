@@ -1,6 +1,3 @@
-const path = require('path')
-
-const model = require(path.join(__dirname,'..','model','products')
 
 
 function login(req,res,next){
@@ -16,3 +13,4 @@ function login(req,res,next){
         }
     }).catch(next)
 }
+module.exports = login;

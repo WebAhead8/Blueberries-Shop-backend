@@ -71,7 +71,7 @@ module.exports = {
   getAllProducts,
   getProductsById,
   addProduct,
-  description,
+  deleteProduct,
   updatePrice,
   updateQuantity
 }
