@@ -36,9 +36,10 @@ function addProduct (product) {
       productDetails
     )
     .then(result => {
-      return result.rows
+      return result.rows[0];
     })
 }
+
 
 function deleteProduct (prductId) {
   return db
