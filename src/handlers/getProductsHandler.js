@@ -1,4 +1,4 @@
-const model = require("../model/getAllProducts");
+const model = require("../model/products");
 
 function getAll(req , res , next){
     model.getAllProducts()

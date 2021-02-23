@@ -20,7 +20,8 @@ CREATE TABLE products (
   description TEXT,
   image VARCHAR(255),
   price INTEGER,
-  quantity INTEGER
+  quantity INTEGER,
+  category VARCHAR(255)
 );
 
 CREATE TABLE bucket (
@@ -34,7 +35,7 @@ CREATE TABLE productBucket (
   product_id INTEGER REFERENCES products(id)
 );
 
-INSERT INTO products(name,description,image,price,quantity)  VALUES
+INSERT INTO products(name,description,price,category,image,quantity)  VALUES
   ('Bounty','coconut and chocolate ice cream',4,'ice cream','./img/bounty.png',100),
   ('Cadbury','cramel and milk ice cream, 500 ml',25,'ice cream','./img/cadbury.png',100),
   ('Cote Dor chocolate','four pcs of luxury chocolate ice cream',45,'ice cream','./img/cote dor chocolate.jpg',100),
@@ -46,15 +47,9 @@ INSERT INTO products(name,description,image,price,quantity)  VALUES
   
     
  INSERT INTO users(email,firstName,lastName,phoneNumber,password,type) VALUES 
-  ("admin@blueberries.com","aladdni","hammodi","0547492796","123Qwe456@sd","admin");
+  ('admin@blueberries.com','aladdin','hammodi','0547492796','123Qwe456@sd','admin');
     
   
-    
-    
-  
-  
-
-export default data
 
 
 COMMIT;
