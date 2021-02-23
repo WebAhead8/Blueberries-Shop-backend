@@ -1,6 +1,5 @@
-const path = require('path')
+const model = require('../model/products')
 
-const model = require(path.join(__dirname,'..','model','products')
 
 
 function getById(req , res , next)
