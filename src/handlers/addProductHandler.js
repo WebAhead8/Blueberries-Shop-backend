@@ -1,6 +1,6 @@
 const model = require('../model/products')
 
-function addProductHandler (req, res, next) {
+function addProductHandler(req, res, next) {
   const body = req.body
   model
     .addProduct(body)
