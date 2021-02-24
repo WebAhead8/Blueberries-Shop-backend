@@ -12,4 +12,5 @@ function updatePrice(req , res , next)
         res.send(product);
     })
 }
+
 module.exports= updatePrice;

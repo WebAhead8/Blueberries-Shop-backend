@@ -1,8 +1,11 @@
 
 require("dotenv").config();
 const jwt = require('jsonwebtoken');
+const model=require("../model/users");
 function verfyAdmin(req,res,next)
 {
+    const auth=req.headers.authentication;
+    console.log(auth);
     if (!auth) {
         const error = new Error("bad request");
         error.status = 400;
@@ -11,7 +14,9 @@ function verfyAdmin(req,res,next)
       try {
         const token =auth.replace('Bearer ','');
         const userID = jwt.verify(token, process.env.JWT_SECRET);
-        users.getUserById(userID.user).then(data=>{
+        console.log(userID)
+        model.getUserById(userID.user).then(data=>{
+            console.log(data);
             if(data.type==="admin")
             next();
             else{
@@ -27,4 +32,4 @@ function verfyAdmin(req,res,next)
       }
 }
 
-module.exports = verfy;
+module.exports = verfyAdmin;

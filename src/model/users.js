@@ -21,9 +21,22 @@ function getUser(email,password)
     
 }
 
+function getUserById(userID)
+{
+
+    return db.query(`SELECT * FROM users WHERE ID =$1`,[userID])
+    .then(result=>{
+        return result.rows[0];
+    })
+    
+
+}
+
+// getUserById(2).then(data=>console.log(data));
+
 //getUser("ave.brhom@gmail.com","123123").then(result=>console.log(result))
 
-module.exports={addUser,getUser}
-
-// addUser({email:"ave.brhom@gmail.com",firstName:"Ebraheem",lastName:"Ghantous",phoneNumber:"0527812946",password:"123123",type:"admin"})
+module.exports={addUser,getUser,getUserById}
+//{"name":"lsdjfn","description":";sdfjlsdkfj","image":"laskd","price":"5","quantity":"100","category":"kjsadf"}
+//  addUser({email:"stamm@gmail.com",firstName:"Ebraheem",lastName:"Ghantous",phoneNumber:"0527812946",password:"123123",type:"client"}).then(data=>console.log(data))
 // .then(result=>{console.log(result)});
