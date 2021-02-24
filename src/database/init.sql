@@ -11,7 +11,6 @@ CREATE TABLE users (
   password VARCHAR(255),
   type VARCHAR(255)
 
-
 );
 
 CREATE TABLE products (

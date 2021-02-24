@@ -51,15 +51,16 @@ function deleteProduct (prductId) {
 
 function updatePrice (data) {
   return db
-    .query(`UPDATE product SET price = $1 WHERE id =$2`, [data.price, data.id])
+    .query(`UPDATE products SET price = $1 WHERE id =$2`, [data.price, data.id])
     .then(result => {
       return result
     })
 }
 
+
 function updateQuantity (data) {
   return db
-    .query(`UPDATE product SET quantity = $1 WHERE id =$2`, [
+    .query(`UPDATE products SET quantity = $1 WHERE id =$2`, [
       data.quantity,
       data.id
     ])
