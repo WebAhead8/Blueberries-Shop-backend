@@ -8,6 +8,7 @@ const deleteProductHandler = require("./src/handlers/deleteProductHandler");
 const getProductsHandler = require("./src/handlers/getProductsHandler");
 const updatePrice = require("./src/handlers/updatePrice");
 const updateQuantity = require("./src/handlers/updateQuantity");
+const getuser = require("./src/handlers/getUserByToken");
 const cors = require('cors');
 
 const PORT = process.env.PORT || 4000;
@@ -21,6 +22,7 @@ server.put("/updateprice", verfyAdmin, updatePrice);
 server.put("/updatequantity", verfyAdmin, updateQuantity);
 server.get("/products/:id", getProductById);
 server.get("/products", getProductsHandler);
+server.post("/getuser", getuser);
 server.delete("/products/:id", deleteProductHandler);
 
 
