@@ -5,7 +5,9 @@ function login(req, res, next) {
     const email = req.body.email;
     const password = req.body.password;
     model.getUser(email, password).then(result => {
+        console.log(process.env.JWT_SECRET);
         if (result) {
+
             const token = jwt.sign({ user: result.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
             res.status(200).send({ access_token: token })
         } else {
