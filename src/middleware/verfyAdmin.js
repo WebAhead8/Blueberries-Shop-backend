@@ -12,7 +12,6 @@ function verfyAdmin(req, res, next) {
     try {
         const token = auth.replace('Bearer ', '');
         const userID = jwt.verify(token, process.env.JWT_SECRET);
-        console.log(userID)
         model.getUserById(userID.user).then(data => {
             if (data.type === "admin")
                 next();
