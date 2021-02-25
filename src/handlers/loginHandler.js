@@ -6,6 +6,7 @@ function login(req, res, next) {
     const email = req.body.email;
     const password = req.body.password;
     console.log(process.env.JWT_SECRET);
+    console.log("lsdfnsdlkgnksjdnfkjsdnskjnfskdjnfdsjkn");
 
     model.getUser(email, password).then(result => {
         if (result) {
