@@ -5,8 +5,9 @@ dotenv.config()
 function login(req, res, next) {
     const email = req.body.email;
     const password = req.body.password;
+    console.log(process.env.JWT_SECRET);
+
     model.getUser(email, password).then(result => {
-        console.log(process.env.JWT_SECRET);
         if (result) {
 
             const token = jwt.sign({ user: result.id }, "lskfnlsdkn", { expiresIn: "1h" });
