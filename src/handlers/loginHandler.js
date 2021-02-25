@@ -8,7 +8,7 @@ function login(req, res, next) {
         console.log(process.env.JWT_SECRET);
         if (result) {
 
-            const token = jwt.sign({ user: result.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+            const token = jwt.sign({ user: result.id }, "staaamjshsdlsdkj", { expiresIn: "1h" });
             res.status(200).send({ access_token: token })
         } else {
             const error = new Error("no user Found");
