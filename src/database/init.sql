@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, products, bucket , productbucket;
+DROP TABLE IF EXISTS users, products, bucket , productbucket,comments;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -34,6 +34,14 @@ CREATE TABLE productBucket (
   product_id INTEGER REFERENCES products(id)
 );
 
+CREATE TABLE comments (
+  id SERIAL PRIMARY KEY,
+name VARCHAR(255),
+email VARCHAR(255),
+phoneNumber VARCHAR(255),
+comment TEXT
+);
+
 INSERT INTO products(name,description,price,category,image,quantity)  VALUES
   ('Bounty','coconut and chocolate ice cream',4,'ice cream','/products_img/bounty.png',100),
   ('Cadbury','cramel and milk ice cream, 500 ml',25,'ice cream','/products_img/cadbury.png',100),
@@ -45,7 +53,10 @@ INSERT INTO products(name,description,price,category,image,quantity)  VALUES
   
     
  INSERT INTO users(email,firstName,lastName,phoneNumber,password,type) VALUES 
-  ('admin@blueberries.com','aladdin','hammodi','0547492796','123Qwe456@sd','admin');
+  ('admin@blueberries.com','aladdin','hammodi','0547492796','123123','admin');
+
+   INSERT INTO comments(name,email,phoneNumber,comment) VALUES 
+  ('ebraheem','ave.brhom@gmail.com','0527812946','nice Shop');
     
   
 
