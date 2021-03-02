@@ -11,6 +11,8 @@ const updateQuantity = require("./src/handlers/updateQuantity");
 const getuser = require("./src/handlers/getUserByToken");
 const addCommentHandler = require("./src/handlers/addCommentHandler");
 const viewCommentHandler = require("./src/handlers/viewCommentHandler");
+const addAdminHandler = require("./src/handlers/addAdminHandler")
+const addClient = require("./src/handlers/addClient");
 const cors = require('cors');
 const buyHandler = require("./src/handlers/buyHandler")
 
@@ -27,9 +29,11 @@ server.get("/products/:id", getProductById);
 server.get("/comment", viewCommentHandler);
 server.get("/products", getProductsHandler);
 server.post("/getuser", getuser);
+server.post("/addClient", addClient);
 server.post("/comment", addCommentHandler);
 server.delete("/products/:id", verfyAdmin, deleteProductHandler);
 server.post("/buy",buyHandler)
+server.post("/addAdmin",addAdminHandler);
 
 
 
