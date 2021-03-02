@@ -10,10 +10,12 @@ function addAdminHandler(req, res, next) {
         .then(hash => {
             body.password = hash;
             model.addAdmin(body)
-        }).then(data => {
-            res.status(200).send(data)
+                .then(data => {
+                    console.log("aaaaaaa" + data)
+                    res.status(200).send(data)
+                })
+                .catch(next)
         })
-        .catch(next)
 }
 
-module.exports=addAdminHandler;
+module.exports = addAdminHandler;

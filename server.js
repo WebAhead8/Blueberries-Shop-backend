@@ -31,7 +31,7 @@ server.post("/getuser", getuser);
 server.post("/addClient", addClient);
 server.post("/comment", addCommentHandler);
 server.delete("/products/:id", verfyAdmin, deleteProductHandler);
-server.post("/addAdminHandler",addAdminHandler);
+server.post("/addAdmin",addAdminHandler);
 
 
 
