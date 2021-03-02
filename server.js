@@ -12,6 +12,7 @@ const getuser = require("./src/handlers/getUserByToken");
 const addCommentHandler = require("./src/handlers/addCommentHandler");
 const viewCommentHandler = require("./src/handlers/viewCommentHandler");
 const cors = require('cors');
+const buyHandler = require("./src/handlers/buyHandler")
 
 const PORT = process.env.PORT || 4000;
 const server = express();
@@ -28,6 +29,7 @@ server.get("/products", getProductsHandler);
 server.post("/getuser", getuser);
 server.post("/comment", addCommentHandler);
 server.delete("/products/:id", verfyAdmin, deleteProductHandler);
+server.post("/buy",buyHandler)
 
 
 
