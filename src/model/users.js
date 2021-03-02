@@ -50,7 +50,22 @@ function getAllComments() {
     })
 }
 
-module.exports = { addUser, getUser, getUserById, addComment, getAllComments }
+function addClient(user) {
+
+    const data = [user.email, user.firstName, user.lastName, user.phoneNumber, user.password, "client"];
+    return db.query(`INSERT INTO users(email,firstName,lastName,phoneNumber,password,type) VALUES($1,$2,$3,$4,$5,$6) returning *`, data).then(result => {
+        return result.rows
+    });
+}
+
+function addAdmin(user) {
+    const data = [user.email, user.firstName, user.lastName, user.phoneNumber, user.password, "admin"];
+    return db.query(`INSERT INTO users(email,firstName,lastName,phoneNumber,password,type) VALUES($1,$2,$3,$4,$5,$6) returning *`, data).then(result => {
+        return result.rows
+    });
+}
+
+module.exports = { addUser, getUser, getUserById, addComment, getAllComments, addClient, addAdmin }
 //{"name":"lsdjfn","description":";sdfjlsdkfj","image":"laskd","price":"5","quantity":"100","category":"kjsadf"}
 //  addUser({email:"stamm@gmail.com",firstName:"Ebraheem",lastName:"Ghantous",phoneNumber:"0527812946",password:"123123",type:"client"}).then(data=>console.log(data))
 // .then(result=>{console.log(result)});
