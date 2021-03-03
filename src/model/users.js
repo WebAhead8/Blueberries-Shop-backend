@@ -10,10 +10,10 @@ function addUser(user) {
         })
 }
 
-function getUser(email, password) {
-    const userDetails = [email, password];
+function getUser(email) {
+    const userDetails = [email];
 
-    return db.query(`SELECT * FROM users WHERE email =$1 AND password=$2`, userDetails)
+    return db.query(`SELECT * FROM users WHERE email =$1`, userDetails)
         .then(result => {
             return result.rows[0];
         })
