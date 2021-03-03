@@ -11,7 +11,6 @@ function addAdminHandler(req, res, next) {
             body.password = hash;
             model.addAdmin(body)
                 .then(data => {
-                    console.log("aaaaaaa" + data)
                     res.status(200).send(data)
                 })
                 .catch(next)

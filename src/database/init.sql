@@ -53,7 +53,7 @@ INSERT INTO products(name,description,price,category,image,quantity)  VALUES
   
     
  INSERT INTO users(email,firstName,lastName,phoneNumber,password,type) VALUES 
-  ('admin@blueberries.com','aladdin','hammodi','0547492796','123123','admin');
+  ('admin@blueberries.com','admin','admin','0547492796','$2a$10$rCbJsO5qPCBeDKBMp7tbqOdwNtLfcJdWH9DoUzuwwFhJS0LBBjF5C','admin');
 
    INSERT INTO comments(name,email,phoneNumber,comment) VALUES 
   ('ebraheem','ave.brhom@gmail.com','0527812946','nice Shop');
