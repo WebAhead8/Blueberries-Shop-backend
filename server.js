@@ -3,6 +3,7 @@ const loginHandler = require("./src/handlers/loginHandler");
 const addUserHandler = require("./src/handlers/addUserHandler");
 const addProductHandler = require("./src/handlers/addProductHandler");
 const verfyAdmin = require("./src/middleware/verfyAdmin");
+const verfyUser = require("./src/middleware/verfyUser");
 const getProductById = require("./src/handlers/getProductsByIdHandler");
 const deleteProductHandler = require("./src/handlers/deleteProductHandler");
 const getProductsHandler = require("./src/handlers/getProductsHandler");
@@ -14,7 +15,8 @@ const viewCommentHandler = require("./src/handlers/viewCommentHandler");
 const addAdminHandler = require("./src/handlers/addAdminHandler")
 const addClient = require("./src/handlers/addClient");
 const cors = require('cors');
-const buyHandler = require("./src/handlers/buyHandler")
+const buyHandler = require("./src/handlers/buyHandler");
+const verfyuser = require("./src/middleware/verfyUser");
 
 const PORT = process.env.PORT || 4000;
 const server = express();
@@ -32,7 +34,7 @@ server.post("/getuser", getuser);
 server.post("/addClient", addClient);
 server.post("/comment", addCommentHandler);
 server.delete("/products/:id", verfyAdmin, deleteProductHandler);
-server.post("/buy", buyHandler)
+server.post("/buy", verfyuser, buyHandler)
 server.post("/addAdmin", verfyAdmin, addAdminHandler);
 
 
